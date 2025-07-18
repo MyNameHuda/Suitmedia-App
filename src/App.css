@@ -60,14 +60,13 @@
 /* Custom style for slanted banner bottom */
 /* This creates the white slanted shape at the bottom of the orange banner overlay */
 .banner-overlay::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 6rem; /* Adjust height as needed to match design */
-    background-color: white;
-    transform: skewY(3deg);
-    transform-origin: bottom left;
-    z-index: 10; /* Ensure it's above the parallax image but below content */
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6rem; /* tinggi overlay putih */
+  background-color: white;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
+  z-index: 10;
 }
