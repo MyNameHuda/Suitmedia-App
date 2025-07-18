@@ -41,12 +41,10 @@ export default function App() {
         method: 'GET',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
       });
-
       if (!response.ok) {
         const errorText = await response.text();
         throw new Error(`HTTP error: ${response.status} - ${errorText}`);
       }
-
       const actualData = await response.json();
       const postsFromApi = actualData.data || [];
       const combinedPosts = postsFromApi.length < 12
@@ -107,7 +105,6 @@ export default function App() {
     const maxButtons = 5;
     let startPage = Math.max(1, pageNumber - Math.floor(maxButtons / 2));
     let endPage = Math.min(totalPages, startPage + maxButtons - 1);
-
     if (endPage - startPage + 1 < maxButtons && totalPages >= maxButtons) {
       startPage = Math.max(1, endPage - maxButtons + 1);
     }
@@ -181,7 +178,7 @@ export default function App() {
         <div className="absolute inset-0 bg-cover bg-center will-change-transform transition-transform duration-75 ease-linear"
           style={{ backgroundImage: `url(/image_7f29a8.jpg)`, transform: `translateY(${scrollY * 0.3}px)` }}></div>
 
-        {/* Overlay dengan potongan putih rapi */}
+        {/* Overlay putih miring */}
         <div className="relative z-10 py-24 md:py-32 text-center text-white bg-gradient-to-r from-orange-500 to-red-500 bg-opacity-80 banner-overlay">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Ideas</h1>
           <p className="text-xl md:text-2xl drop-shadow-md">Where all our great things begin</p>
