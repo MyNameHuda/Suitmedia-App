@@ -1,46 +1,41 @@
 /* src/App.css */
 
-/* Custom styles for navigation links */
+/* Navigation links */
 .nav-link {
   @apply text-gray-600 hover:text-orange-500 transition-colors duration-200;
 }
-
 .nav-link.active {
   @apply font-bold text-orange-500;
 }
 
-/* Custom styles for pagination buttons (still defined but not used in infinite scroll UI) */
+/* Pagination buttons */
 .btn-page {
   @apply mx-1 px-3 py-1 rounded-full bg-gray-200 hover:bg-gray-300 transition-colors duration-200;
 }
-
 .btn-page.active {
   @apply bg-orange-500 text-white;
 }
 
-/* Custom styles for select dropdowns */
+/* Select dropdowns */
 .select {
   @apply border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500;
 }
 
-/* Custom styles for post cards */
+/* Post cards */
 .card {
   @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-in-out;
-  /* Enhanced shadow and hover effect */
   @apply hover:shadow-xl hover:scale-[1.02];
 }
-
 .card-img {
   @apply w-full h-full object-cover;
 }
 
-/* Aspect ratio for images (if @tailwindcss/aspect-ratio plugin is not used) */
+/* Aspect ratio (fallback) */
 .aspect-w-16 {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
 }
-
 .aspect-h-9 {
   position: absolute;
   top: 0;
@@ -49,7 +44,7 @@
   height: 100%;
 }
 
-/* For the 3-line ellipsis effect (if @tailwindcss/line-clamp plugin is not used) */
+/* Line clamp */
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -57,22 +52,16 @@
   overflow: hidden;
 }
 
-/* ================================
-   Custom style for slanted banner bottom
-   Membuat potongan miring putih rapi di bawah banner
-================================= */
+/* Banner overlay: potongan putih miring rapi */
 .banner-overlay::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 6rem; /* tinggi overlay putih */
+  height: 6rem; /* tinggi area putih */
   background-color: white;
-
-  /* Potongan miring rapi menggunakan clip-path */
-  /* 0 0 = kiri atas, 100% 10% = kanan sedikit turun, lalu ke kanan bawah dan kiri bawah */
-  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
-
   z-index: 10;
+  /* bentuk miring rapi */
+  clip-path: polygon(0 0, 100% 8%, 100% 100%, 0% 100%);
 }
